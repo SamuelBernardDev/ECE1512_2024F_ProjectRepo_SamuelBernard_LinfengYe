@@ -1,0 +1,295 @@
+
+==================================================================================
+method:  random
+=========================================
+seed:  0
+class_order:  [2, 8, 4, 9, 1, 6, 7, 3, 0, 5]
+augmentation strategy: 
+ color_crop_cutout_flip_scale_rotate
+augmentation parameters: 
+ {'aug_mode': 'S', 'prob_flip': 0.5, 'ratio_scale': 1.2, 'ratio_rotate': 15.0, 'ratio_crop_pad': 0.125, 'ratio_cutout': 0.5, 'brightness': 1.0, 'saturation': 2.0, 'contrast': 0.5}
+
+-----------------------------
+method random seed 0 step 0 
+classes_seen:  [2, 8]
+train data size:  torch.Size([20, 1, 28, 28])
+test set size:  torch.Size([2006, 1, 28, 28])
+[2024-11-04 13:10:46] Evaluate_00: epoch = 1000 train time = 5 s train loss = 0.004110 train acc = 1.0000, test acc = 0.9835
+[2024-11-04 13:10:52] Evaluate_01: epoch = 1000 train time = 5 s train loss = 0.034850 train acc = 1.0000, test acc = 0.9821
+[2024-11-04 13:10:58] Evaluate_02: epoch = 1000 train time = 6 s train loss = 0.000005 train acc = 1.0000, test acc = 0.9791
+Evaluate 3 random ConvNetD3, mean = 0.9816 std = 0.0019
+
+-----------------------------
+method random seed 0 step 1 
+classes_seen:  [2, 8, 4, 9]
+train data size:  torch.Size([40, 1, 28, 28])
+test set size:  torch.Size([3997, 1, 28, 28])
+[2024-11-04 13:11:07] Evaluate_00: epoch = 1000 train time = 6 s train loss = 0.001879 train acc = 1.0000, test acc = 0.9467
+[2024-11-04 13:11:14] Evaluate_01: epoch = 1000 train time = 6 s train loss = 0.000511 train acc = 1.0000, test acc = 0.9462
+[2024-11-04 13:11:20] Evaluate_02: epoch = 1000 train time = 5 s train loss = 0.010012 train acc = 1.0000, test acc = 0.9487
+Evaluate 3 random ConvNetD3, mean = 0.9472 std = 0.0011
+
+-----------------------------
+method random seed 0 step 2 
+classes_seen:  [2, 8, 4, 9, 1, 6]
+train data size:  torch.Size([60, 1, 28, 28])
+test set size:  torch.Size([6090, 1, 28, 28])
+[2024-11-04 13:11:29] Evaluate_00: epoch = 1000 train time = 6 s train loss = 0.001155 train acc = 1.0000, test acc = 0.9594
+[2024-11-04 13:11:37] Evaluate_01: epoch = 1000 train time = 6 s train loss = 0.009247 train acc = 1.0000, test acc = 0.9616
+[2024-11-04 13:11:44] Evaluate_02: epoch = 1000 train time = 6 s train loss = 0.000266 train acc = 1.0000, test acc = 0.9588
+Evaluate 3 random ConvNetD3, mean = 0.9599 std = 0.0012
+
+-----------------------------
+method random seed 0 step 3 
+classes_seen:  [2, 8, 4, 9, 1, 6, 7, 3]
+train data size:  torch.Size([80, 1, 28, 28])
+test set size:  torch.Size([8128, 1, 28, 28])
+[2024-11-04 13:11:55] Evaluate_00: epoch = 1000 train time = 7 s train loss = 0.004248 train acc = 1.0000, test acc = 0.9354
+[2024-11-04 13:12:03] Evaluate_01: epoch = 1000 train time = 7 s train loss = 0.000753 train acc = 1.0000, test acc = 0.9328
+[2024-11-04 13:12:11] Evaluate_02: epoch = 1000 train time = 7 s train loss = 0.000869 train acc = 1.0000, test acc = 0.9288
+Evaluate 3 random ConvNetD3, mean = 0.9323 std = 0.0027
+
+-----------------------------
+method random seed 0 step 4 
+classes_seen:  [2, 8, 4, 9, 1, 6, 7, 3, 0, 5]
+train data size:  torch.Size([100, 1, 28, 28])
+test set size:  torch.Size([10000, 1, 28, 28])
+[2024-11-04 13:12:25] Evaluate_00: epoch = 1000 train time = 8 s train loss = 0.001348 train acc = 1.0000, test acc = 0.9292
+[2024-11-04 13:12:34] Evaluate_01: epoch = 1000 train time = 9 s train loss = 0.081310 train acc = 0.9700, test acc = 0.9262
+[2024-11-04 13:12:44] Evaluate_02: epoch = 1000 train time = 9 s train loss = 0.002703 train acc = 1.0000, test acc = 0.9236
+Evaluate 3 random ConvNetD3, mean = 0.9263 std = 0.0023
+=========================================
+seed:  1
+class_order:  [2, 9, 6, 4, 0, 3, 1, 7, 8, 5]
+augmentation strategy: 
+ color_crop_cutout_flip_scale_rotate
+augmentation parameters: 
+ {'aug_mode': 'S', 'prob_flip': 0.5, 'ratio_scale': 1.2, 'ratio_rotate': 15.0, 'ratio_crop_pad': 0.125, 'ratio_cutout': 0.5, 'brightness': 1.0, 'saturation': 2.0, 'contrast': 0.5, 'Siamese': False, 'latestseed': -1}
+
+-----------------------------
+method random seed 1 step 0 
+classes_seen:  [2, 9]
+train data size:  torch.Size([20, 1, 28, 28])
+test set size:  torch.Size([2041, 1, 28, 28])
+[2024-11-04 13:12:51] Evaluate_00: epoch = 1000 train time = 5 s train loss = 0.000002 train acc = 1.0000, test acc = 0.9838
+[2024-11-04 13:12:57] Evaluate_01: epoch = 1000 train time = 5 s train loss = 0.000658 train acc = 1.0000, test acc = 0.9848
+[2024-11-04 13:13:02] Evaluate_02: epoch = 1000 train time = 5 s train loss = 0.000161 train acc = 1.0000, test acc = 0.9858
+Evaluate 3 random ConvNetD3, mean = 0.9848 std = 0.0008
+
+-----------------------------
+method random seed 1 step 1 
+classes_seen:  [2, 9, 6, 4]
+train data size:  torch.Size([40, 1, 28, 28])
+test set size:  torch.Size([3981, 1, 28, 28])
+[2024-11-04 13:13:11] Evaluate_00: epoch = 1000 train time = 5 s train loss = 0.000191 train acc = 1.0000, test acc = 0.9776
+[2024-11-04 13:13:17] Evaluate_01: epoch = 1000 train time = 6 s train loss = 0.002517 train acc = 1.0000, test acc = 0.9807
+[2024-11-04 13:13:24] Evaluate_02: epoch = 1000 train time = 6 s train loss = 0.065002 train acc = 0.9750, test acc = 0.9786
+Evaluate 3 random ConvNetD3, mean = 0.9790 std = 0.0013
+
+-----------------------------poch = 1000 train time = 9 s train loss = 0.062434 train acc = 0.9900, test acc = 0.9487
+[2024-11-04 13:48:09] Evaluate_01: epoch = 1000 train time = 9 s train loss = 0.040781 train acc = 1.0000, test acc = 0.9452
+method random seed 1 step 2 
+classes_seen:  [2, 9, 6, 4, 0, 3]
+train data size:  torch.Size([60, 1, 28, 28])
+test set size:  torch.Size([5971, 1, 28, 28])
+[2024-11-04 13:13:34] Evaluate_00: epoch = 1000 train time = 6 s train loss = 0.000366 train acc = 1.0000, test acc = 0.9724
+[2024-11-04 13:13:41] Evaluate_01: epoch = 1000 train time = 6 s train loss = 0.039754 train acc = 1.0000, test acc = 0.9727
+[2024-11-04 13:13:48] Evaluate_02: epoch = 1000 train time = 6 s train loss = 0.043924 train acc = 0.9833, test acc = 0.9719
+Evaluate 3 random ConvNetD3, mean = 0.9723 std = 0.0003
+
+-----------------------------
+method random seed 1 step 3 
+classes_seen:  [2, 9, 6, 4, 0, 3, 1, 7]
+train data size:  torch.Size([80, 1, 28, 28])
+test set size:  torch.Size([8134, 1, 28, 28])
+[2024-11-04 13:14:00] Evaluate_00: epoch = 1000 train time = 7 s train loss = 0.020398 train acc = 1.0000, test acc = 0.9518
+[2024-11-04 13:14:08] Evaluate_01: epoch = 1000 train time = 7 s train loss = 0.019448 train acc = 1.0000, test acc = 0.9471
+[2024-11-04 13:14:16] Evaluate_02: epoch = 1000 train time = 7 s train loss = 0.056214 train acc = 1.0000, test acc = 0.9518
+Evaluate 3 random ConvNetD3, mean = 0.9502 std = 0.0022
+
+-----------------------------
+method random seed 1 step 4 
+classes_seen:  [2, 9, 6, 4, 0, 3, 1, 7, 8, 5]
+train data size:  torch.Size([100, 1, 28, 28])
+test set size:  torch.Size([10000, 1, 28, 28])
+[2024-11-04 13:14:29] Evaluate_00: epoch = 1000 train time = 9 s train loss = 0.001957 train acc = 1.0000, test acc = 0.9400
+[2024-11-04 13:14:39] Evaluate_01: epoch = 1000 train time = 8 s train loss = 0.001089 train acc = 1.0000, test acc = 0.9391
+[2024-11-04 13:14:48] Evaluate_02: epoch = 1000 train time = 8 s train loss = 0.000307 train acc = 1.0000, test acc = 0.9407
+Evaluate 3 random ConvNetD3, mean = 0.9399 std = 0.0007
+=========================================
+seed:  2
+class_order:  [4, 1, 5, 0, 7, 2, 3, 6, 9, 8]
+augmentation strategy: 
+ color_crop_cutout_flip_scale_rotate
+augmentation parameters: 
+ {'aug_mode': 'S', 'prob_flip': 0.5, 'ratio_scale': 1.2, 'ratio_rotate': 15.0, 'ratio_crop_pad': 0.125, 'ratio_cutout': 0.5, 'brightness': 1.0, 'saturation': 2.0, 'contrast': 0.5, 'Siamese': False, 'latestseed': -1}
+
+-----------------------------
+method random seed 2 step 0 
+classes_seen:  [4, 1]
+train data size:  torch.Size([20, 1, 28, 28])
+test set size:  torch.Size([2117, 1, 28, 28])
+[2024-11-04 13:14:56] Evaluate_00: epoch = 1000 train time = 5 s train loss = 0.000341 train acc = 1.0000, test acc = 0.9972
+[2024-11-04 13:15:01] Evaluate_01: epoch = 1000 train time = 5 s train loss = 0.000003 train acc = 1.0000, test acc = 0.9972
+[2024-11-04 13:15:07] Evaluate_02: epoch = 1000 train time = 5 s train loss = 0.000022 train acc = 1.0000, test acc = 0.9948
+Evaluate 3 random ConvNetD3, mean = 0.9964 std = 0.0011
+
+-----------------------------
+method random seed 2 step 1 
+classes_seen:  [4, 1, 5, 0]
+train data size:  torch.Size([40, 1, 28, 28])
+test set size:  torch.Size([3989, 1, 28, 28])
+[2024-11-04 13:15:16] Evaluate_00: epoch = 1000 train time = 6 s train loss = 0.001912 train acc = 1.0000, test acc = 0.9895
+[2024-11-04 13:15:22] Evaluate_01: epoch = 1000 train time = 5 s train loss = 0.000211 train acc = 1.0000, test acc = 0.9917
+[2024-11-04 13:15:29] Evaluate_02: epoch = 1000 train time = 6 s train loss = 0.028785 train acc = 1.0000, test acc = 0.9902
+Evaluate 3 random ConvNetD3, mean = 0.9905 std = 0.0009
+
+-----------------------------
+method random seed 2 step 2 
+classes_seen:  [4, 1, 5, 0, 7, 2]
+train data size:  torch.Size([60, 1, 28, 28])
+test set size:  torch.Size([6049, 1, 28, 28])
+[2024-11-04 13:15:39] Evaluate_00: epoch = 1000 train time = 6 s train loss = 0.000369 train acc = 1.0000, test acc = 0.9744
+[2024-11-04 13:15:46] Evaluate_01: epoch = 1000 train time = 6 s train loss = 0.000187 train acc = 1.0000, test acc = 0.9732
+[2024-11-04 13:15:53] Evaluate_02: epoch = 1000 train time = 6 s train loss = 0.016728 train acc = 1.0000, test acc = 0.9772
+Evaluate 3 random ConvNetD3, mean = 0.9749 std = 0.0017
+
+-----------------------------
+method random seed 2 step 3 
+classes_seen:  [4, 1, 5, 0, 7, 2, 3, 6]
+train data size:  torch.Size([80, 1, 28, 28])
+test set size:  torch.Size([8017, 1, 28, 28])
+[2024-11-04 13:16:04] Evaluate_00: epoch = 1000 train time = 7 s train loss = 0.000855 train acc = 1.0000, test acc = 0.9499
+[2024-11-04 13:16:12] Evaluate_01: epoch = 1000 train time = 7 s train loss = 0.001337 train acc = 1.0000, test acc = 0.9568
+[2024-11-04 13:16:20] Evaluate_02: epoch = 1000 train time = 7 s train loss = 0.006605 train acc = 1.0000, test acc = 0.9522
+Evaluate 3 random ConvNetD3, mean = 0.9530 std = 0.0029
+
+-----------------------------
+method random seed 2 step 4 
+classes_seen:  [4, 1, 5, 0, 7, 2, 3, 6, 9, 8]
+train data size:  torch.Size([100, 1, 28, 28])
+test set size:  torch.Size([10000, 1, 28, 28])
+[2024-11-04 13:16:34] Evaluate_00: epoch = 1000 train time = 9 s train loss = 0.072648 train acc = 0.9800, test acc = 0.9355
+[2024-11-04 13:16:43] Evaluate_01: epoch = 1000 train time = 9 s train loss = 0.077906 train acc = 0.9700, test acc = 0.9364
+[2024-11-04 13:16:53] Evaluate_02: epoch = 1000 train time = 9 s train loss = 0.002689 train acc = 1.0000, test acc = 0.9312
+Evaluate 3 random ConvNetD3, mean = 0.9344 std = 0.0023
+=========================================
+seed:  3
+class_order:  [5, 4, 1, 2, 9, 6, 7, 0, 3, 8]
+augmentation strategy: 
+ color_crop_cutout_flip_scale_rotate
+augmentation parameters: 
+ {'aug_mode': 'S', 'prob_flip': 0.5, 'ratio_scale': 1.2, 'ratio_rotate': 15.0, 'ratio_crop_pad': 0.125, 'ratio_cutout': 0.5, 'brightness': 1.0, 'saturation': 2.0, 'contrast': 0.5, 'Siamese': False, 'latestseed': -1}
+
+-----------------------------
+method random seed 3 step 0 
+classes_seen:  [5, 4]
+train data size:  torch.Size([20, 1, 28, 28])
+test set size:  torch.Size([1874, 1, 28, 28])
+[2024-11-04 13:17:01] Evaluate_00: epoch = 1000 train time = 5 s train loss = 0.000497 train acc = 1.0000, test acc = 0.9973
+[2024-11-04 13:17:07] Evaluate_01: epoch = 1000 train time = 5 s train loss = 0.001064 train acc = 1.0000, test acc = 0.9979
+[2024-11-04 13:17:13] Evaluate_02: epoch = 1000 train time = 5 s train loss = 0.000002 train acc = 1.0000, test acc = 0.9957
+Evaluate 3 random ConvNetD3, mean = 0.9970 std = 0.0009
+
+-----------------------------
+method random seed 3 step 1 
+classes_seen:  [5, 4, 1, 2]
+train data size:  torch.Size([40, 1, 28, 28])
+test set size:  torch.Size([4041, 1, 28, 28])
+[2024-11-04 13:17:22] Evaluate_00: epoch = 1000 train time = 6 s train loss = 0.001281 train acc = 1.0000, test acc = 0.9844
+[2024-11-04 13:17:28] Evaluate_01: epoch = 1000 train time = 6 s train loss = 0.000107 train acc = 1.0000, test acc = 0.9854
+[2024-11-04 13:17:35] Evaluate_02: epoch = 1000 train time = 6 s train loss = 0.025405 train acc = 1.0000, test acc = 0.9847
+Evaluate 3 random ConvNetD3, mean = 0.9848 std = 0.0004
+
+-----------------------------
+method random seed 3 step 2 
+classes_seen:  [5, 4, 1, 2, 9, 6]
+train data size:  torch.Size([60, 1, 28, 28])
+test set size:  torch.Size([6008, 1, 28, 28])
+[2024-11-04 13:17:45] Evaluate_00: epoch = 1000 train time = 6 s train loss = 0.000193 train acc = 1.0000, test acc = 0.9680
+[2024-11-04 13:17:52] Evaluate_01: epoch = 1000 train time = 6 s train loss = 0.028282 train acc = 1.0000, test acc = 0.9694
+[2024-11-04 13:17:59] Evaluate_02: epoch = 1000 train time = 6 s train loss = 0.004378 train acc = 1.0000, test acc = 0.9662
+Evaluate 3 random ConvNetD3, mean = 0.9679 std = 0.0013
+
+-----------------------------
+method random seed 3 step 3 
+classes_seen:  [5, 4, 1, 2, 9, 6, 7, 0]
+train data size:  torch.Size([80, 1, 28, 28])
+test set size:  torch.Size([8016, 1, 28, 28])
+[2024-11-04 13:18:11] Evaluate_00: epoch = 1000 train time = 7 s train loss = 0.008580 train acc = 1.0000, test acc = 0.9596
+[2024-11-04 13:18:19] Evaluate_01: epoch = 1000 train time = 7 s train loss = 0.000222 train acc = 1.0000, test acc = 0.9613
+[2024-11-04 13:18:27] Evaluate_02: epoch = 1000 train time = 7 s train loss = 0.000806 train acc = 1.0000, test acc = 0.9595
+Evaluate 3 random ConvNetD3, mean = 0.9601 std = 0.0009
+
+-----------------------------
+method random seed 3 step 4 
+classes_seen:  [5, 4, 1, 2, 9, 6, 7, 0, 3, 8]
+train data size:  torch.Size([100, 1, 28, 28])
+test set size:  torch.Size([10000, 1, 28, 28])
+[2024-11-04 13:18:40] Evaluate_00: epoch = 1000 train time = 9 s train loss = 0.044042 train acc = 1.0000, test acc = 0.9427
+[2024-11-04 13:18:50] Evaluate_01: epoch = 1000 train time = 8 s train loss = 0.004447 train acc = 1.0000, test acc = 0.9391
+[2024-11-04 13:18:59] Evaluate_02: epoch = 1000 train time = 9 s train loss = 0.001385 train acc = 1.0000, test acc = 0.9412
+Evaluate 3 random ConvNetD3, mean = 0.9410 std = 0.0015
+=========================================
+seed:  4
+class_order:  [3, 8, 4, 9, 2, 6, 0, 1, 5, 7]
+augmentation strategy: 
+ color_crop_cutout_flip_scale_rotate
+augmentation parameters: 
+ {'aug_mode': 'S', 'prob_flip': 0.5, 'ratio_scale': 1.2, 'ratio_rotate': 15.0, 'ratio_crop_pad': 0.125, 'ratio_cutout': 0.5, 'brightness': 1.0, 'saturation': 2.0, 'contrast': 0.5, 'Siamese': False, 'latestseed': -1}
+
+-----------------------------
+method random seed 4 step 0 
+classes_seen:  [3, 8]
+train data size:  torch.Size([20, 1, 28, 28])
+test set size:  torch.Size([1984, 1, 28, 28])
+[2024-11-04 13:19:07] Evaluate_00: epoch = 1000 train time = 6 s train loss = 0.000001 train acc = 1.0000, test acc = 0.9703
+[2024-11-04 13:19:13] Evaluate_01: epoch = 1000 train time = 5 s train loss = 0.000584 train acc = 1.0000, test acc = 0.9572
+[2024-11-04 13:19:19] Evaluate_02: epoch = 1000 train time = 5 s train loss = 0.001704 train acc = 1.0000, test acc = 0.9582
+Evaluate 3 random ConvNetD3, mean = 0.9619 std = 0.0060
+
+-----------------------------
+method random seed 4 step 1 
+classes_seen:  [3, 8, 4, 9]
+train data size:  torch.Size([40, 1, 28, 28])
+test set size:  torch.Size([3975, 1, 28, 28])
+[2024-11-04 13:19:28] Evaluate_00: epoch = 1000 train time = 6 s train loss = 0.003297 train acc = 1.0000, test acc = 0.9477
+[2024-11-04 13:19:34] Evaluate_01: epoch = 1000 train time = 6 s train loss = 0.000295 train acc = 1.0000, test acc = 0.9512
+[2024-11-04 13:19:41] Evaluate_02: epoch = 1000 train time = 6 s train loss = 0.002860 train acc = 1.0000, test acc = 0.9474
+Evaluate 3 random ConvNetD3, mean = 0.9488 std = 0.0017
+
+-----------------------------
+method random seed 4 step 2 
+classes_seen:  [3, 8, 4, 9, 2, 6]
+train data size:  torch.Size([60, 1, 28, 28])
+test set size:  torch.Size([5965, 1, 28, 28])
+[2024-11-04 13:19:50] Evaluate_00: epoch = 1000 train time = 6 s train loss = 0.027049 train acc = 0.9833, test acc = 0.9524
+[2024-11-04 13:19:57] Evaluate_01: epoch = 1000 train time = 6 s train loss = 0.000526 train acc = 1.0000, test acc = 0.9504
+[2024-11-04 13:20:04] Evaluate_02: epoch = 1000 train time = 6 s train loss = 0.012431 train acc = 1.0000, test acc = 0.9489
+Evaluate 3 random ConvNetD3, mean = 0.9505 std = 0.0014
+
+-----------------------------
+method random seed 4 step 3 
+classes_seen:  [3, 8, 4, 9, 2, 6, 0, 1]
+train data size:  torch.Size([80, 1, 28, 28])
+test set size:  torch.Size([8080, 1, 28, 28])
+[2024-11-04 13:20:16] Evaluate_00: epoch = 1000 train time = 7 s train loss = 0.088661 train acc = 0.9750, test acc = 0.9382
+[2024-11-04 13:20:24] Evaluate_01: epoch = 1000 train time = 7 s train loss = 0.000416 train acc = 1.0000, test acc = 0.9370
+[2024-11-04 13:20:32] Evaluate_02: epoch = 1000 train time = 7 s train loss = 0.032389 train acc = 1.0000, test acc = 0.9417
+Evaluate 3 random ConvNetD3, mean = 0.9390 std = 0.0020
+
+-----------------------------
+method random seed 4 step 4 
+classes_seen:  [3, 8, 4, 9, 2, 6, 0, 1, 5, 7]
+train data size:  torch.Size([100, 1, 28, 28])
+test set size:  torch.Size([10000, 1, 28, 28])
+[2024-11-04 13:20:46] Evaluate_00: epoch = 1000 train time = 9 s train loss = 0.002027 train acc = 1.0000, test acc = 0.9299
+[2024-11-04 13:20:55] Evaluate_01: epoch = 1000 train time = 9 s train loss = 0.001052 train acc = 1.0000, test acc = 0.9369
+[2024-11-04 13:21:05] Evaluate_02: epoch = 1000 train time = 9 s train loss = 0.001200 train acc = 1.0000, test acc = 0.9339
+Evaluate 3 random ConvNetD3, mean = 0.9336 std = 0.0029
+
+
+
+5 step learning random perforamnce:
+& 98.4$\pm$1.3  & 97.0$\pm$1.8  & 96.5$\pm$0.9  & 94.7$\pm$1.0  & 93.5$\pm$0.6  
+Done
