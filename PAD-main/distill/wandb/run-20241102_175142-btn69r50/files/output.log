@@ -1,0 +1,45 @@
+Distributed training:  False
+Hyper-parameters:
+ {'cfg': '../configs/MNIST/ConvIN/IPC10.yaml', 'dataset': 'MNIST', 'subset': 'imagenette', 'model': 'ConvNet', 'ipc': 10, 'eval_mode': 'S', 'num_eval': 1, 'eval_it': 500, 'epoch_eval_train': 1000, 'Iteration': 10000, 'lr_img': 100, 'lr_teacher': 0.01, 'lr_init': 0.01, 'batch_real': 256, 'batch_syn': 64, 'batch_train': 64, 'pix_init': 'samples_predicted_correctly', 'dsa': True, 'dsa_strategy': 'color_crop_cutout_flip_scale_rotate', 'data_path': '../dataset', 'buffer_path': '../buffer_storage/', 'expert_epochs': 2, 'syn_steps': 80, 'max_start_epoch': 20, 'min_start_epoch': 0, 'zca': True, 'load_all': False, 'no_aug': False, 'texture': False, 'canvas_size': 2, 'canvas_samples': 1, 'max_files': None, 'max_experts': None, 'force_save': False, 'ema_decay': 0.9995, 'lr_y': 2.0, 'Momentum_y': 0.9, 'project': 'MNIST_ipc10', 'name': 'RANDOM', 'threshold': 1.0, 'loss_ratio': 0.5, 'depth_ratio': 0.5, 'record_loss': False, 'Sequential_Generation': True, 'expansion_end_epoch': 1000, 'current_max_start_epoch': 10, 'init_frozen': 'start', 'skip_first_eva': True, 'parall_eva': False, 'lr_lr': 1e-05, 'res': 32, 'device': 'cuda', 'Initialize_Label_With_Another_Model': False, 'Initialize_Label_Model': '', 'Initialize_Label_Model_Dir': '', 'Label_Model_Timestamp': -1, 'zca_trans': ZCAWhitening(), 'im_size': [28, 28], 'dc_aug_param': None, 'dsa_param': <utils.utils_baseline.ParamDiffAug object at 0x7f1be7c20b20>, '_wandb': {}, 'distributed': False}
+Evaluation model pool:  ['ConvNet']
+BUILDING DATASET
+  0%|                                                                                                                                                    | 0/60000 [00:00<?, ?it/s]/fs2/comm/kpgrp/yelinfen/Documents/ECE1512_2024F_ProjectA_submission_files/PAD-main/distill/PAD_depth.py:116: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels_all.append(class_map[torch.tensor(sample[1]).item()])
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 60000/60000 [00:00<00:00, 76464.56it/s]
+60000it [00:00, 1177838.91it/s]
+class c = 0: 5923 real images
+class c = 1: 6742 real images
+class c = 2: 5958 real images
+class c = 3: 6131 real images
+class c = 4: 5842 real images
+class c = 5: 5421 real images
+class c = 6: 5918 real images
+class c = 7: 6265 real images
+class c = 8: 5851 real images
+class c = 9: 5949 real images
+real images channel 0, mean = -0.0000, std = 0.5891
+/fs2/comm/kpgrp/yelinfen/Documents/ECE1512_2024F_ProjectA_submission_files/PAD-main/distill/PAD_depth.py:138: UserWarning: Creating a tensor from a list of numpy.ndarrays is extremely slow. Please consider converting the list to a single numpy.ndarray with numpy.array() before converting to a tensor. (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:261.)
+  label_syn = torch.tensor([np.ones(args.ipc) * i for i in range(num_classes)], dtype=torch.long, requires_grad=False,
+Expert Dir: ../buffer_storage/MNIST/ConvNet
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+0.0.0
+1.0.0
+2.0.0
+3.0.0
+4.0.0
+5.0.0
+6.0.0
+7.0.0
+8.0.0
+9.0.0
+[2024-11-02 17:51:44] training begins
+InitialAcc:1.0
+/fs2/comm/kpgrp/yelinfen/miniconda3/envs/py310/lib/python3.10/site-packages/torch/functional.py:504: UserWarning: torch.meshgrid: in an upcoming release, it will be required to pass the indexing argument. (Triggered internally at ../aten/src/ATen/native/TensorShape.cpp:3526.)
+  return _VF.meshgrid(tensors, **kwargs)  # type: ignore[attr-defined]
+[2024-11-02 17:51:47] iter = 0000, loss = 0.8565
+Traceback (most recent call last):
+  File "/fs2/comm/kpgrp/yelinfen/Documents/ECE1512_2024F_ProjectA_submission_files/PAD-main/distill/PAD_depth.py", line 627, in <module>
+    main(args)
+  File "/fs2/comm/kpgrp/yelinfen/Documents/ECE1512_2024F_ProjectA_submission_files/PAD-main/distill/PAD_depth.py", line 523, in main
+    target_params = expert_trajectory[start_epoch + args.expert_epochs]
+IndexError: list index out of range

@@ -1,0 +1,43 @@
+{
+  "os":  "Linux-6.1.0-26-amd64-x86_64-with-glibc2.36",
+  "python":  "3.10.0",
+  "startedAt":  "2024-11-04T16:13:13.755543Z",
+  "args":  [
+    "--cfg",
+    "../configs/MNIST/ConvIN/IPC10.yaml"
+  ],
+  "program":  "/fs2/comm/kpgrp/yelinfen/Documents/ECE1512_2024F_ProjectA_submission_files/PAD-main/distill/PAD_depth.py",
+  "codePath":  "PAD_depth.py",
+  "email":  "lzknus@gmail.com",
+  "root":  "/fs2/comm/kpgrp/yelinfen/Documents/ECE1512_2024F_ProjectA_submission_files/PAD-main/distill",
+  "host":  "hestia",
+  "username":  "yelinfen",
+  "executable":  "/fs2/comm/kpgrp/yelinfen/miniconda3/envs/py310/bin/python",
+  "codePathLocal":  "PAD_depth.py",
+  "cpu_count":  12,
+  "cpu_count_logical":  24,
+  "gpu":  "Quadro RTX 5000",
+  "gpu_count":  1,
+  "disk":  {
+    "/":  {
+      "total":  "63090503680",
+      "used":  "14843969536"
+    }
+  },
+  "memory":  {
+    "total":  "67093008384"
+  },
+  "cpu":  {
+    "count":  12,
+    "countLogical":  24
+  },
+  "gpu_nvidia":  [
+    {
+      "name":  "Quadro RTX 5000",
+      "memoryTotal":  "17179869184",
+      "cudaCores":  3072,
+      "architecture":  "Turing"
+    }
+  ],
+  "cudaVersion":  "12.2"
+}

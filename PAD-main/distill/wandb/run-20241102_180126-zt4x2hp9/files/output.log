@@ -1,0 +1,486 @@
+Distributed training:  False
+Hyper-parameters:
+ {'cfg': '../configs/MNIST/ConvIN/IPC10.yaml', 'dataset': 'MNIST', 'subset': 'imagenette', 'model': 'ConvNet', 'ipc': 10, 'eval_mode': 'S', 'num_eval': 1, 'eval_it': 500, 'epoch_eval_train': 1000, 'Iteration': 2000, 'lr_img': 100, 'lr_teacher': 0.01, 'lr_init': 0.01, 'batch_real': 256, 'batch_syn': 64, 'batch_train': 64, 'pix_init': 'samples_predicted_correctly', 'dsa': True, 'dsa_strategy': 'color_crop_cutout_flip_scale_rotate', 'data_path': '../dataset', 'buffer_path': '../buffer_storage/', 'expert_epochs': 2, 'syn_steps': 80, 'max_start_epoch': 20, 'min_start_epoch': 0, 'zca': True, 'load_all': False, 'no_aug': False, 'texture': False, 'canvas_size': 2, 'canvas_samples': 1, 'max_files': None, 'max_experts': None, 'force_save': False, 'ema_decay': 0.9995, 'lr_y': 2.0, 'Momentum_y': 0.9, 'project': 'MNIST_ipc10', 'name': 'RANDOM', 'threshold': 1.0, 'loss_ratio': 0.5, 'depth_ratio': 0.5, 'record_loss': False, 'Sequential_Generation': True, 'expansion_end_epoch': 1000, 'current_max_start_epoch': 10, 'init_frozen': 'start', 'skip_first_eva': True, 'parall_eva': False, 'lr_lr': 1e-05, 'res': 32, 'device': 'cuda', 'Initialize_Label_With_Another_Model': False, 'Initialize_Label_Model': '', 'Initialize_Label_Model_Dir': '', 'Label_Model_Timestamp': -1, 'zca_trans': ZCAWhitening(), 'im_size': [28, 28], 'dc_aug_param': None, 'dsa_param': <utils.utils_baseline.ParamDiffAug object at 0x7f3aeda64b80>, '_wandb': {}, 'distributed': False}
+Evaluation model pool:  ['ConvNet']
+BUILDING DATASET
+  0%|                                                                                                                    | 0/60000 [00:00<?, ?it/s]/fs2/comm/kpgrp/yelinfen/Documents/ECE1512_2024F_ProjectA_submission_files/PAD-main/distill/PAD_depth.py:116: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels_all.append(class_map[torch.tensor(sample[1]).item()])
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████████| 60000/60000 [00:00<00:00, 74513.04it/s]
+60000it [00:00, 1221084.75it/s]
+class c = 0: 5923 real images
+class c = 1: 6742 real images
+class c = 2: 5958 real images
+class c = 3: 6131 real images
+class c = 4: 5842 real images
+class c = 5: 5421 real images
+class c = 6: 5918 real images
+class c = 7: 6265 real images
+class c = 8: 5851 real images
+class c = 9: 5949 real images
+real images channel 0, mean = -0.0000, std = 0.5891
+/fs2/comm/kpgrp/yelinfen/Documents/ECE1512_2024F_ProjectA_submission_files/PAD-main/distill/PAD_depth.py:138: UserWarning: Creating a tensor from a list of numpy.ndarrays is extremely slow. Please consider converting the list to a single numpy.ndarray with numpy.array() before converting to a tensor. (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:261.)
+  label_syn = torch.tensor([np.ones(args.ipc) * i for i in range(num_classes)], dtype=torch.long, requires_grad=False,
+Expert Dir: ../buffer_storage/MNIST/ConvNet
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+0.0.0
+1.0.0
+2.0.0
+3.0.0
+4.0.0
+5.0.0
+6.0.0
+7.0.0
+8.0.0
+9.0.0
+[2024-11-02 18:01:28] training begins
+InitialAcc:1.0
+/fs2/comm/kpgrp/yelinfen/miniconda3/envs/py310/lib/python3.10/site-packages/torch/functional.py:504: UserWarning: torch.meshgrid: in an upcoming release, it will be required to pass the indexing argument. (Triggered internally at ../aten/src/ATen/native/TensorShape.cpp:3526.)
+  return _VF.meshgrid(tensors, **kwargs)  # type: ignore[attr-defined]
+[2024-11-02 18:01:31] iter = 0000, loss = 0.8768
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:01:51] iter = 0010, loss = 0.4077
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:02:11] iter = 0020, loss = 0.7146
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:02:31] iter = 0030, loss = 0.7545
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:02:50] iter = 0040, loss = 0.4163
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:03:10] iter = 0050, loss = 0.5482
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:03:30] iter = 0060, loss = 0.3886
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:03:50] iter = 0070, loss = 0.4263
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:04:09] iter = 0080, loss = 0.3202
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:04:29] iter = 0090, loss = 0.3226
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:04:48] iter = 0100, loss = 0.3020
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:05:08] iter = 0110, loss = 0.5377
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:05:28] iter = 0120, loss = 0.2682
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:05:48] iter = 0130, loss = 0.2549
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:06:07] iter = 0140, loss = 0.3837
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:06:27] iter = 0150, loss = 0.3029
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:06:46] iter = 0160, loss = 0.3277
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:07:06] iter = 0170, loss = 0.2871
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:07:24] iter = 0180, loss = 0.4990
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:07:44] iter = 0190, loss = 0.4652
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:08:03] iter = 0200, loss = 0.4994
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:08:23] iter = 0210, loss = 0.4393
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:08:42] iter = 0220, loss = 0.3046
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:09:01] iter = 0230, loss = 0.5636
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:09:20] iter = 0240, loss = 0.3693
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:09:40] iter = 0250, loss = 0.3638
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:09:59] iter = 0260, loss = 0.3263
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:10:18] iter = 0270, loss = 0.3679
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:10:37] iter = 0280, loss = 0.3723
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:10:57] iter = 0290, loss = 0.2866
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:11:16] iter = 0300, loss = 0.2663
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:11:35] iter = 0310, loss = 0.5141
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:11:55] iter = 0320, loss = 0.2501
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:12:15] iter = 0330, loss = 0.3217
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:12:34] iter = 0340, loss = 0.5795
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:12:54] iter = 0350, loss = 0.2487
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:13:13] iter = 0360, loss = 0.2489
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:13:33] iter = 0370, loss = 0.2930
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:13:53] iter = 0380, loss = 0.4056
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:14:12] iter = 0390, loss = 0.5568
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:14:32] iter = 0400, loss = 0.6784
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:14:52] iter = 0410, loss = 0.3803
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:15:12] iter = 0420, loss = 0.2343
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:15:31] iter = 0430, loss = 0.3329
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:15:51] iter = 0440, loss = 0.3501
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:16:11] iter = 0450, loss = 0.2514
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:16:30] iter = 0460, loss = 0.2740
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:16:50] iter = 0470, loss = 0.5567
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:17:09] iter = 0480, loss = 0.4614
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:17:29] iter = 0490, loss = 0.2910
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+-------------------------
+Evaluation
+model_train = ConvNet, model_eval = ConvNet, iteration = 500
+DSA augmentation strategy:
+ color_crop_cutout_flip_scale_rotate
+DSA augmentation parameters:
+ {'aug_mode': 'S', 'prob_flip': 0.5, 'ratio_scale': 1.2, 'ratio_rotate': 15.0, 'ratio_crop_pad': 0.125, 'ratio_cutout': 0.5, 'ratio_noise': 0.05, 'brightness': 1.0, 'saturation': 2.0, 'contrast': 0.5, 'batchmode': False, 'latestseed': -1}
+100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1001/1001 [00:14<00:00, 70.14it/s]
+[2024-11-02 18:18:01] Evaluate_00: epoch = 1000 train time = 14 s train loss = 0.037493 train acc = 0.0200, test acc = 0.9683
+Evaluate 1 random ConvNet, mean = 0.9783 std = 0.0000
+-------------------------
+Device: cuda
+[2024-11-02 18:18:03] iter = 0500, loss = 0.3282
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:18:23] iter = 0510, loss = 0.2939
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:18:43] iter = 0520, loss = 0.4776
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:19:03] iter = 0530, loss = 0.3952
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:19:22] iter = 0540, loss = 0.2755
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:19:42] iter = 0550, loss = 0.5048
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:20:02] iter = 0560, loss = 0.2534
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:20:22] iter = 0570, loss = 0.2875
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:20:41] iter = 0580, loss = 0.2006
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:21:01] iter = 0590, loss = 0.2622
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:21:21] iter = 0600, loss = 0.4515
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:21:40] iter = 0610, loss = 0.5065
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:22:00] iter = 0620, loss = 0.2158
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:22:20] iter = 0630, loss = 0.3121
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:22:40] iter = 0640, loss = 0.3817
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:22:59] iter = 0650, loss = 0.5286
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:23:19] iter = 0660, loss = 0.2031
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:23:38] iter = 0670, loss = 0.3980
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:23:58] iter = 0680, loss = 0.2337
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:24:18] iter = 0690, loss = 0.5295
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:24:37] iter = 0700, loss = 0.3288
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:24:57] iter = 0710, loss = 0.4262
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:25:17] iter = 0720, loss = 0.2552
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:25:37] iter = 0730, loss = 0.3377
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:25:56] iter = 0740, loss = 0.3149
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:26:16] iter = 0750, loss = 0.4253
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:26:36] iter = 0760, loss = 0.3355
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:26:55] iter = 0770, loss = 0.3065
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:27:15] iter = 0780, loss = 0.2201
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:27:35] iter = 0790, loss = 0.2151
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:27:54] iter = 0800, loss = 0.3232
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:28:14] iter = 0810, loss = 0.4124
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:28:33] iter = 0820, loss = 0.5137
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:28:53] iter = 0830, loss = 0.4298
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:29:13] iter = 0840, loss = 0.3865
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:29:33] iter = 0850, loss = 0.2255
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:29:52] iter = 0860, loss = 0.3931
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:30:12] iter = 0870, loss = 0.3823
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:30:32] iter = 0880, loss = 0.2775
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:30:51] iter = 0890, loss = 0.3323
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:31:11] iter = 0900, loss = 0.4322
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:31:31] iter = 0910, loss = 0.2906
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:31:50] iter = 0920, loss = 0.2653
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:32:10] iter = 0930, loss = 0.2445
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:32:30] iter = 0940, loss = 0.4060
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:32:49] iter = 0950, loss = 0.5366
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:33:09] iter = 0960, loss = 0.2832
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:33:29] iter = 0970, loss = 0.2058
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:33:49] iter = 0980, loss = 0.3269
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:34:08] iter = 0990, loss = 0.2081
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+-------------------------
+Evaluation
+model_train = ConvNet, model_eval = ConvNet, iteration = 1000
+DSA augmentation strategy:
+ color_crop_cutout_flip_scale_rotate
+DSA augmentation parameters:
+ {'aug_mode': 'S', 'prob_flip': 0.5, 'ratio_scale': 1.2, 'ratio_rotate': 15.0, 'ratio_crop_pad': 0.125, 'ratio_cutout': 0.5, 'ratio_noise': 0.05, 'brightness': 1.0, 'saturation': 2.0, 'contrast': 0.5, 'batchmode': False, 'latestseed': -1}
+100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1001/1001 [00:13<00:00, 73.12it/s]
+[2024-11-02 18:34:40] Evaluate_00: epoch = 1000 train time = 13 s train loss = 0.033284 train acc = 0.0200, test acc = 0.9717
+Evaluate 1 random ConvNet, mean = 0.9817 std = 0.0000
+-------------------------
+Device: cuda
+[2024-11-02 18:34:42] iter = 1000, loss = 0.2533
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:35:02] iter = 1010, loss = 0.3865
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:35:21] iter = 1020, loss = 0.2696
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:35:41] iter = 1030, loss = 0.4886
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:36:01] iter = 1040, loss = 0.2717
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:36:21] iter = 1050, loss = 0.4056
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:36:40] iter = 1060, loss = 0.3230
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:37:00] iter = 1070, loss = 0.2502
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:37:19] iter = 1080, loss = 0.3754
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:37:39] iter = 1090, loss = 0.3598
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:37:59] iter = 1100, loss = 0.2469
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:38:19] iter = 1110, loss = 0.3831
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:38:38] iter = 1120, loss = 0.2692
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:38:58] iter = 1130, loss = 0.2000
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:39:17] iter = 1140, loss = 0.2107
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:39:37] iter = 1150, loss = 0.5459
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:39:57] iter = 1160, loss = 0.2458
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:40:16] iter = 1170, loss = 0.2598
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:40:36] iter = 1180, loss = 0.4377
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:40:56] iter = 1190, loss = 0.2157
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:41:15] iter = 1200, loss = 0.2721
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:41:35] iter = 1210, loss = 0.4012
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:41:54] iter = 1220, loss = 0.3724
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:42:14] iter = 1230, loss = 0.2793
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:42:34] iter = 1240, loss = 0.2169
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:42:53] iter = 1250, loss = 0.4863
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:43:13] iter = 1260, loss = 0.4107
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:43:33] iter = 1270, loss = 0.2227
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:43:52] iter = 1280, loss = 0.2772
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:44:12] iter = 1290, loss = 0.2588
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:44:32] iter = 1300, loss = 0.2347
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:44:51] iter = 1310, loss = 0.2090
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:45:11] iter = 1320, loss = 0.4863
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:45:30] iter = 1330, loss = 0.3960
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:45:50] iter = 1340, loss = 0.2858
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:46:10] iter = 1350, loss = 0.4643
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:46:29] iter = 1360, loss = 0.2210
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:46:49] iter = 1370, loss = 0.2219
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:47:08] iter = 1380, loss = 0.6319
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:47:28] iter = 1390, loss = 0.3239
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:47:48] iter = 1400, loss = 0.2771
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:48:07] iter = 1410, loss = 0.5138
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:48:26] iter = 1420, loss = 0.2358
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:48:46] iter = 1430, loss = 0.3765
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:49:05] iter = 1440, loss = 0.2039
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:49:25] iter = 1450, loss = 0.1700
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:49:44] iter = 1460, loss = 0.3043
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:50:04] iter = 1470, loss = 0.2919
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:50:23] iter = 1480, loss = 0.5561
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:50:42] iter = 1490, loss = 0.2181
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+-------------------------
+Evaluation
+model_train = ConvNet, model_eval = ConvNet, iteration = 1500
+DSA augmentation strategy:
+ color_crop_cutout_flip_scale_rotate
+DSA augmentation parameters:
+ {'aug_mode': 'S', 'prob_flip': 0.5, 'ratio_scale': 1.2, 'ratio_rotate': 15.0, 'ratio_crop_pad': 0.125, 'ratio_cutout': 0.5, 'ratio_noise': 0.05, 'brightness': 1.0, 'saturation': 2.0, 'contrast': 0.5, 'batchmode': False, 'latestseed': -1}
+100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1001/1001 [00:13<00:00, 73.20it/s]
+[2024-11-02 18:51:14] Evaluate_00: epoch = 1000 train time = 13 s train loss = 0.023026 train acc = 0.0200, test acc = 0.9699
+Evaluate 1 random ConvNet, mean = 0.9799 std = 0.0000
+-------------------------
+[2024-11-02 18:51:16] iter = 1500, loss = 0.2783
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:51:35] iter = 1510, loss = 0.2496
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:51:55] iter = 1520, loss = 0.3943
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:52:15] iter = 1530, loss = 0.2385
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:52:35] iter = 1540, loss = 0.4763
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:52:54] iter = 1550, loss = 0.5096
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:53:14] iter = 1560, loss = 0.3165
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:53:34] iter = 1570, loss = 0.3137
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:53:53] iter = 1580, loss = 0.2548
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:54:13] iter = 1590, loss = 0.2367
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:54:33] iter = 1600, loss = 0.4166
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:54:52] iter = 1610, loss = 0.2333
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:55:12] iter = 1620, loss = 0.1876
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:55:33] iter = 1630, loss = 0.2401
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:55:52] iter = 1640, loss = 0.1835
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:56:12] iter = 1650, loss = 0.2909
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:56:32] iter = 1660, loss = 0.2400
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:56:51] iter = 1670, loss = 0.4733
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:57:11] iter = 1680, loss = 0.3148
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:57:31] iter = 1690, loss = 0.2507
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:57:50] iter = 1700, loss = 0.4531
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:58:10] iter = 1710, loss = 0.2718
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:58:30] iter = 1720, loss = 0.2344
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:58:49] iter = 1730, loss = 0.2046
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:59:09] iter = 1740, loss = 0.6444
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:59:29] iter = 1750, loss = 0.4580
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 18:59:48] iter = 1760, loss = 0.2904
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 19:00:08] iter = 1770, loss = 0.3167
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 19:00:27] iter = 1780, loss = 0.3210
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 19:00:47] iter = 1790, loss = 0.4337
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 19:01:07] iter = 1800, loss = 0.2489
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 19:01:26] iter = 1810, loss = 0.2419
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 19:01:46] iter = 1820, loss = 0.6658
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 19:02:05] iter = 1830, loss = 0.2386
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 19:02:25] iter = 1840, loss = 0.3883
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 19:02:44] iter = 1850, loss = 0.2256
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 19:03:04] iter = 1860, loss = 0.3671
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 19:03:24] iter = 1870, loss = 0.4311
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 19:03:43] iter = 1880, loss = 0.2132
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 19:04:03] iter = 1890, loss = 0.2806
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 19:04:23] iter = 1900, loss = 0.3107
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 19:04:42] iter = 1910, loss = 0.2168
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 19:05:02] iter = 1920, loss = 0.3639
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 19:05:22] iter = 1930, loss = 0.1906
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 19:05:41] iter = 1940, loss = 0.2908
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 19:06:01] iter = 1950, loss = 0.3686
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 19:06:20] iter = 1960, loss = 0.4114
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 19:06:40] iter = 1970, loss = 0.1750
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 19:07:00] iter = 1980, loss = 0.2111
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-02 19:07:19] iter = 1990, loss = 0.4076
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+-------------------------
+Evaluation
+model_train = ConvNet, model_eval = ConvNet, iteration = 2000
+DSA augmentation strategy:
+ color_crop_cutout_flip_scale_rotate
+DSA augmentation parameters:
+ {'aug_mode': 'S', 'prob_flip': 0.5, 'ratio_scale': 1.2, 'ratio_rotate': 15.0, 'ratio_crop_pad': 0.125, 'ratio_cutout': 0.5, 'ratio_noise': 0.05, 'brightness': 1.0, 'saturation': 2.0, 'contrast': 0.5, 'batchmode': False, 'latestseed': -1}
+100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1001/1001 [00:13<00:00, 71.72it/s]
+[2024-11-02 19:07:51] Evaluate_00: epoch = 1000 train time = 13 s train loss = 0.024892 train acc = 0.0200, test acc = 0.9695
+Evaluate 1 random ConvNet, mean = 0.9795 std = 0.0000
+-------------------------
+Device: cuda
+[2024-11-02 19:07:53] iter = 2000, loss = 0.3524

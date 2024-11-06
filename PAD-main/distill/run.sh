@@ -1,0 +1,1 @@
+python PAD_depth.py --cfg ../configs/MNIST/ConvIN/IPC10.yaml

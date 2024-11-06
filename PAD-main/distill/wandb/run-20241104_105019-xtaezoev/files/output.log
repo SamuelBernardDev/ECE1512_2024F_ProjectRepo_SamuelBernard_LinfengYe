@@ -1,0 +1,207 @@
+Distributed training:  False
+Hyper-parameters:
+ {'cfg': '../configs/MNIST/ConvIN/IPC10.yaml', 'dataset': 'MNIST', 'subset': 'imagenette', 'model': 'ConvNet', 'ipc': 10, 'eval_mode': 'S', 'num_eval': 1, 'eval_it': 500, 'epoch_eval_train': 1000, 'Iteration': 2000, 'lr_img': 100, 'lr_teacher': 0.01, 'lr_init': 0.01, 'batch_real': 256, 'batch_syn': 64, 'batch_train': 64, 'pix_init': 'samples_predicted_correctly', 'dsa': True, 'dsa_strategy': 'color_crop_cutout_flip_scale_rotate', 'data_path': '../dataset', 'buffer_path': '../buffer_storage/', 'expert_epochs': 2, 'syn_steps': 80, 'max_start_epoch': 20, 'min_start_epoch': 0, 'zca': True, 'load_all': False, 'no_aug': False, 'texture': False, 'canvas_size': 2, 'canvas_samples': 1, 'max_files': None, 'max_experts': None, 'force_save': False, 'ema_decay': 0.9995, 'lr_y': 2.0, 'Momentum_y': 0.9, 'project': 'MNIST_ipc10', 'name': 'RANDOM', 'threshold': 1.0, 'loss_ratio': 0.5, 'depth_ratio': 0.5, 'record_loss': False, 'Sequential_Generation': True, 'expansion_end_epoch': 1000, 'current_max_start_epoch': 10, 'init_frozen': 'start', 'skip_first_eva': True, 'parall_eva': False, 'lr_lr': 1e-05, 'res': 32, 'device': 'cuda', 'Initialize_Label_With_Another_Model': False, 'Initialize_Label_Model': '', 'Initialize_Label_Model_Dir': '', 'Label_Model_Timestamp': -1, 'zca_trans': ZCAWhitening(), 'im_size': [28, 28], 'dc_aug_param': None, 'dsa_param': <utils.utils_baseline.ParamDiffAug object at 0x7fc7f83f9a50>, '_wandb': {}, 'distributed': False}
+Evaluation model pool:  ['ConvNet']
+BUILDING DATASET
+  0%|                                                                                                                                             | 0/60000 [00:00<?, ?it/s]/fs2/comm/kpgrp/yelinfen/Documents/ECE1512_2024F_ProjectA_submission_files/PAD-main/distill/PAD_depth.py:116: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels_all.append(class_map[torch.tensor(sample[1]).item()])
+100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 60000/60000 [00:00<00:00, 81363.14it/s]
+60000it [00:00, 1166515.59it/s]
+class c = 0: 5923 real images
+class c = 1: 6742 real images
+class c = 2: 5958 real images
+class c = 3: 6131 real images
+class c = 4: 5842 real images
+class c = 5: 5421 real images
+class c = 6: 5918 real images
+class c = 7: 6265 real images
+class c = 8: 5851 real images
+class c = 9: 5949 real images
+real images channel 0, mean = -0.0000, std = 0.5891
+/fs2/comm/kpgrp/yelinfen/Documents/ECE1512_2024F_ProjectA_submission_files/PAD-main/distill/PAD_depth.py:138: UserWarning: Creating a tensor from a list of numpy.ndarrays is extremely slow. Please consider converting the list to a single numpy.ndarray with numpy.array() before converting to a tensor. (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:278.)
+  label_syn = torch.tensor([np.ones(args.ipc) * i for i in range(num_classes)], dtype=torch.long, requires_grad=False,
+Expert Dir: ../buffer_storage/MNIST/ConvNet
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+/fs2/comm/kpgrp/yelinfen/Documents/ECE1512_2024F_ProjectA_submission_files/PAD-main/distill/PAD_depth.py:178: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  buffer = torch.load(expert_files[expert_id[file_idx]])
+/fs2/comm/kpgrp/yelinfen/Documents/ECE1512_2024F_ProjectA_submission_files/PAD-main/distill/PAD_depth.py:208: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  temp_params = torch.load(label_expert_files[0])[0][args.Label_Model_Timestamp]
+0.0.0
+1.0.0
+2.0.0
+3.0.0
+4.0.0
+5.0.0
+6.0.0
+7.0.0
+8.0.0
+9.0.0
+[2024-11-04 10:50:21] training begins
+/fs2/comm/kpgrp/yelinfen/Documents/ECE1512_2024F_ProjectA_submission_files/PAD-main/distill/PAD_depth.py:292: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  Temp_Buffer = torch.load(label_expert_files[i])
+InitialAcc:1.0
+/fs2/comm/kpgrp/yelinfen/miniconda3/envs/py310/lib/python3.10/site-packages/torch/functional.py:534: UserWarning: torch.meshgrid: in an upcoming release, it will be required to pass the indexing argument. (Triggered internally at ../aten/src/ATen/native/TensorShape.cpp:3595.)
+  return _VF.meshgrid(tensors, **kwargs)  # type: ignore[attr-defined]
+[2024-11-04 10:50:24] iter = 0000, loss = 0.8772
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+/fs2/comm/kpgrp/yelinfen/Documents/ECE1512_2024F_ProjectA_submission_files/PAD-main/distill/PAD_depth.py:506: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  buffer = torch.load(expert_files[expert_id[file_idx]])
+[2024-11-04 10:50:44] iter = 0010, loss = 0.4197
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-04 10:51:03] iter = 0020, loss = 0.7206
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-04 10:51:23] iter = 0030, loss = 0.7373
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-04 10:51:42] iter = 0040, loss = 0.4011
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-04 10:52:02] iter = 0050, loss = 0.5402
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-04 10:52:21] iter = 0060, loss = 0.4091
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-04 10:52:41] iter = 0070, loss = 0.4327
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-04 10:53:00] iter = 0080, loss = 0.3202
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-04 10:53:20] iter = 0090, loss = 0.3294
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-04 10:53:39] iter = 0100, loss = 0.2954
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-04 10:53:59] iter = 0110, loss = 0.5779
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-04 10:54:21] iter = 0120, loss = 0.2855
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-04 10:54:41] iter = 0130, loss = 0.2826
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-04 10:55:00] iter = 0140, loss = 0.3714
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-04 10:55:20] iter = 0150, loss = 0.3234
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-04 10:55:39] iter = 0160, loss = 0.3221
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-04 10:55:59] iter = 0170, loss = 0.2979
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-04 10:56:18] iter = 0180, loss = 0.4942
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-04 10:56:38] iter = 0190, loss = 0.4891
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-04 10:56:57] iter = 0200, loss = 0.5255
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-04 10:57:17] iter = 0210, loss = 0.4482
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-04 10:57:37] iter = 0220, loss = 0.2780
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-04 10:57:56] iter = 0230, loss = 0.5469
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-04 10:58:16] iter = 0240, loss = 0.3620
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-04 10:58:36] iter = 0250, loss = 0.3594
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-04 10:58:55] iter = 0260, loss = 0.3315
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-04 10:59:14] iter = 0270, loss = 0.3724
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-04 10:59:34] iter = 0280, loss = 0.3738
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-04 10:59:54] iter = 0290, loss = 0.2857
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-04 11:00:13] iter = 0300, loss = 0.2508
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-04 11:00:32] iter = 0310, loss = 0.4980
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-04 11:00:51] iter = 0320, loss = 0.2595
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-04 11:01:10] iter = 0330, loss = 0.3178
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-04 11:01:30] iter = 0340, loss = 0.5666
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-04 11:01:50] iter = 0350, loss = 0.2475
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-04 11:02:09] iter = 0360, loss = 0.2506
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-04 11:02:28] iter = 0370, loss = 0.2869
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-04 11:02:47] iter = 0380, loss = 0.3808
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-04 11:03:07] iter = 0390, loss = 0.5729
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-04 11:03:26] iter = 0400, loss = 0.6629
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-04 11:03:45] iter = 0410, loss = 0.4437
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-04 11:04:04] iter = 0420, loss = 0.2361
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-04 11:04:23] iter = 0430, loss = 0.3336
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-04 11:04:43] iter = 0440, loss = 0.3998
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-04 11:05:03] iter = 0450, loss = 0.2577
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-04 11:05:22] iter = 0460, loss = 0.2670
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-04 11:05:42] iter = 0470, loss = 0.5893
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-04 11:06:01] iter = 0480, loss = 0.4641
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-04 11:06:20] iter = 0490, loss = 0.2996
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+-------------------------
+Evaluation
+model_train = ConvNet, model_eval = ConvNet, iteration = 500
+DSA augmentation strategy:
+ color_crop_cutout_flip_scale_rotate
+DSA augmentation parameters:
+ {'aug_mode': 'S', 'prob_flip': 0.5, 'ratio_scale': 1.2, 'ratio_rotate': 15.0, 'ratio_crop_pad': 0.125, 'ratio_cutout': 0.5, 'ratio_noise': 0.05, 'brightness': 1.0, 'saturation': 2.0, 'contrast': 0.5, 'batchmode': False, 'latestseed': -1}
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1001/1001 [00:13<00:00, 74.34it/s]
+[2024-11-04 11:06:51] Evaluate_00: epoch = 1000 train time = 13 s train loss = 0.037489 train acc = 0.0200, test acc = 0.9656
+Evaluate 1 random ConvNet, mean = 0.9756 std = 0.0000
+-------------------------
+Device: cuda
+[2024-11-04 11:06:53] iter = 0500, loss = 0.3200
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-04 11:07:13] iter = 0510, loss = 0.2926
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-04 11:07:33] iter = 0520, loss = 0.4546
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-04 11:07:52] iter = 0530, loss = 0.3584
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-04 11:08:12] iter = 0540, loss = 0.2892
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-04 11:08:31] iter = 0550, loss = 0.5385
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-04 11:08:51] iter = 0560, loss = 0.2541
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-04 11:09:10] iter = 0570, loss = 0.3053
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-04 11:09:29] iter = 0580, loss = 0.1978
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-04 11:09:49] iter = 0590, loss = 0.2290
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-04 11:10:08] iter = 0600, loss = 0.4553
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-04 11:10:28] iter = 0610, loss = 0.5431
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-04 11:10:47] iter = 0620, loss = 0.2352
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-04 11:11:07] iter = 0630, loss = 0.3121
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-04 11:11:26] iter = 0640, loss = 0.3681
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-04 11:11:45] iter = 0650, loss = 0.5101
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-04 11:12:05] iter = 0660, loss = 0.2060
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-04 11:12:25] iter = 0670, loss = 0.3736
+loading file ../buffer_storage/MNIST/ConvNet/replay_buffer_0.pt
+[2024-11-04 11:12:44] iter = 0680, loss = 0.2226
+Traceback (most recent call last):
+  File "/fs2/comm/kpgrp/yelinfen/Documents/ECE1512_2024F_ProjectA_submission_files/PAD-main/distill/PAD_depth.py", line 627, in <module>
+    main(args)
+  File "/fs2/comm/kpgrp/yelinfen/Documents/ECE1512_2024F_ProjectA_submission_files/PAD-main/distill/PAD_depth.py", line 593, in main
+    grand_loss.backward()
+  File "/fs2/comm/kpgrp/yelinfen/miniconda3/envs/py310/lib/python3.10/site-packages/torch/_tensor.py", line 581, in backward
+    torch.autograd.backward(
+  File "/fs2/comm/kpgrp/yelinfen/miniconda3/envs/py310/lib/python3.10/site-packages/torch/autograd/__init__.py", line 347, in backward
+    _engine_run_backward(
+  File "/fs2/comm/kpgrp/yelinfen/miniconda3/envs/py310/lib/python3.10/site-packages/torch/autograd/graph.py", line 825, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+KeyboardInterrupt

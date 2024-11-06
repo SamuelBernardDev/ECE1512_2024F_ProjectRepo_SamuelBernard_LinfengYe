@@ -1,0 +1,19 @@
+{"time":"2024-11-04T10:49:37.087822494-05:00","level":"INFO","msg":"using version","core version":"0.18.5"}
+{"time":"2024-11-04T10:49:37.087841114-05:00","level":"INFO","msg":"created symlink","path":"/fs2/comm/kpgrp/yelinfen/Documents/ECE1512_2024F_ProjectA_submission_files/PAD-main/distill/wandb/run-20241104_104937-65sq5myl/logs/debug-core.log"}
+{"time":"2024-11-04T10:49:37.201485383-05:00","level":"INFO","msg":"created new stream","id":"65sq5myl"}
+{"time":"2024-11-04T10:49:37.201512795-05:00","level":"INFO","msg":"stream: started","id":"65sq5myl"}
+{"time":"2024-11-04T10:49:37.201655119-05:00","level":"INFO","msg":"handler: started","stream_id":{"value":"65sq5myl"}}
+{"time":"2024-11-04T10:49:37.202777338-05:00","level":"INFO","msg":"sender: started","stream_id":"65sq5myl"}
+{"time":"2024-11-04T10:49:37.202764477-05:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"65sq5myl"}}
+{"time":"2024-11-04T10:49:37.413464931-05:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-04T10:49:41.588250066-05:00","level":"INFO","msg":"stream: closing","id":"65sq5myl"}
+{"time":"2024-11-04T10:49:41.588300999-05:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-04T10:49:41.58978564-05:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-04T10:49:41.656460129-05:00","level":"WARN","msg":"No job ingredients found, not creating job artifact"}
+{"time":"2024-11-04T10:49:41.656486741-05:00","level":"WARN","msg":"No source type found, not creating job artifact"}
+{"time":"2024-11-04T10:49:41.656495533-05:00","level":"INFO","msg":"sender: sendDefer: no job artifact to save"}
+{"time":"2024-11-04T10:49:41.904693182-05:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-04T10:49:42.038803076-05:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"65sq5myl"}}
+{"time":"2024-11-04T10:49:42.038873576-05:00","level":"INFO","msg":"sender: closed","stream_id":"65sq5myl"}
+{"time":"2024-11-04T10:49:42.038863934-05:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"65sq5myl"}}
+{"time":"2024-11-04T10:49:42.039772801-05:00","level":"INFO","msg":"stream: closed","id":"65sq5myl"}
